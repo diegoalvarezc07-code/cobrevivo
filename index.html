@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CobreVivo | Pulseras de Cobre Chileno</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variables de Color basadas en el Logo */
+        :root {
+            --cream: #F4EFE6;
+            --copper: #B87333;
+            --teal-dark: #1E4C5E;
+            --teal-light: #4FA8A4;
+            --text-dark: #333333;
+            --white: #FFFFFF;
+            --whatsapp-green: #25D366;
+        }
+
+        /* Reset y Estilos Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--teal-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navegación */
+        header {
+            background-color: var(--cream);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo-text .cobre { color: var(--copper); }
+        .logo-text .vivo { color: var(--teal-dark); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 700;
+            color: var(--teal-dark);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--copper);
+        }
+
+        .btn-cta {
+            background-color: var(--teal-dark);
+            color: var(--cream);
+            padding: 0.6rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--copper);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 5% 4rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-subtitle {
+            color: var(--copper);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--teal-dark);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--copper);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--teal-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Sección Historia */
+        .historia {
+            background-color: var(--white);
+            padding: 5rem 5%;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--copper);
+            margin: 1rem auto 0;
+        }
+
+        .historia p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #444;
+            text-align: justify;
+        }
+
+        .destacado {
+            font-style: italic;
+            color: var(--teal-dark);
+            font-size: 1.3rem;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border-top: 1px solid var(--copper);
+            border-bottom: 1px solid var(--copper);
+        }
+
+        /* NUEVA SECCIÓN: Promoción */
+        .promo-section {
+            background-color: var(--copper);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 5%;
+            margin: 2rem auto;
+            max-width: 1100px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(184, 115, 51, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .promo-badge {
+            background-color: var(--teal-dark);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .promo-section h2 {
+            color: var(--white);
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .promo-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .promo-card {
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 2px dashed var(--cream);
+            border-radius: 8px;
+            padding: 1.5rem 3rem;
+            min-width: 250px;
+        }
+
+        .promo-card h3 {
+            color: var(--cream);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .promo-price {
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .promo-price span {
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .promo-section .btn-primary {
+            background-color: var(--teal-dark);
+            font-size: 1.1rem;
+            padding: 1.2rem 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .promo-section .btn-primary:hover {
+            background-color: #153743;
+            transform: scale(1.05);
+        }
+
+        /* Sección Productos */
+        .productos {
+            padding: 2rem 5% 5rem;
+        }
+
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .producto-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .producto-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Estilos para las fotos reales */
+        .producto-img-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden; 
+            background-color: #f0f0f0; 
+        }
+
+        .producto-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            transition: transform 0.4s ease;
+        }
+
+        .producto-card:hover .producto-img {
+            transform: scale(1.05); 
+        }
+
+        .producto-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .producto-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .producto-info p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .etiqueta-promo {
+            background-color: var(--cream);
+            color: var(--copper);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            border: 1px solid var(--copper);
+        }
+
+        .btn-whatsapp-card {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--teal-dark);
+            color: var(--white);
+            padding: 0.8rem 1rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn-whatsapp-card:hover {
+            background-color: var(--whatsapp-green);
+        }
+
+        .btn-whatsapp-card svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Sección Cuidados */
+        .cuidados {
+            background-color: var(--teal-dark);
+            color: var(--cream);
+            padding: 5rem 5%;
+        }
+
+        .cuidados h2 {
+            color: var(--cream);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .cuidados-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cuidados-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--copper);
+        }
+
+        .cuidados-item h3 {
+            color: var(--teal-light);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .cuidados-item p {
+            font-size: 1rem;
+            color: #e0e0e0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #153743;
+            color: var(--cream);
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer .logo-text {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        footer p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 1rem;
+            font-weight: 700;
+            color: var(--teal-light);
+            transition: color 0.3s;
+        }
+
+        .footer-whatsapp:hover {
+            color: var(--copper);
+        }
+
+        /* Botón Flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-3px);
+            background-color: #128C7E;
+            box-shadow: 2px 6px 15px rgba(0,0,0,0.4);
+        }
+
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .cuidados-grid { grid-template-columns: 1fr; }
+            .historia p { text-align: left; }
+            
+            .promo-section h2 { font-size: 2rem; }
+            .promo-grid { flex-direction: column; gap: 1rem; }
+            .promo-card { padding: 1rem; min-width: 100%; }
+            .promo-price { font-size: 2.5rem; }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-text">
+            <span class="cobre">COBRE</span><span class="vivo">VIVO</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#historia">Nuestra Historia</a>
+            <a href="#promocion">Promoción</a>
+            <a href="#productos">Pulseras</a>
+            <a href="#cuidados">Cuidados</a>
+        </nav>
+        <a href="https://wa.me/56962253410?text=Hola%20CobreVivo,%20quiero%20aprovechar%20la%20promoción%20de%201%20por%20$9.990%20o%202%20por%20$12.990" target="_blank" rel="noopener noreferrer" class="btn-cta">Aprovechar Promo</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="hero-subtitle">Saber ancestral y bienestar compartido</span>
+        <h1>Lleva contigo la fuerza silenciosa de lo hecho a mano</h1>
+        <p>Piezas vivas y conductoras, nacidas en la cordillera de Chile y diseñadas para habitar tu piel.</p>
+        <a href="#promocion" class="btn-primary">Ver Oferta Especial</a>
+    </section>
+
+    <!-- Historia Section -->
+    <section id="historia" class="historia">
+        <div class="container">
+            <h2 class="section-title">Nuestra Historia</h2>
+            <p>Hace miles de años, el cobre nos enseñó que la materia puede transformarse sin perder su alma. En el Egipto de los faraones ya se fundía para hacer espejos, herramientas y joyas; en los Andes y en el norte de Chile, atacameños y diaguitas también lo trabajaron, y lo hicieron adorno, ofrenda y símbolo.</p>
+            <p>Nacido de la tierra y moldeado al calor del oficio, hoy ese metal ancestral nace en la cordillera de Chile y toma forma en nuestras pulseras: piezas vivas y conductoras diseñadas para habitar la piel, acompañar tus días y llevar contigo la fuerza silenciosa de lo hecho a mano.</p>
+            
+            <div class="destacado">
+                "CobreVivo lo lleva a tu muñeca: un metal que no se detiene y que cambia contigo."
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: Promoción -->
+    <section id="promocion" class="promo-section">
+        <span class="promo-badge">Oferta por tiempo limitado</span>
+        <h2>Lleva tu CobreVivo</h2>
+        
+        <div class="promo-grid">
+            <div class="promo-card">
+                <h3>1 Pulsera</h3>
+                <div class="promo-price"><span>$</span>9.990</div>
+            </div>
+            <div class="promo-card" style="background-color: var(--teal-dark); border-color: var(--copper);">
+                <h3>2 Pulseras</h3>
+                <div class="promo-price"><span>$</span>12.990</div>
+            </div>
+        </div>
+
+        <a href="https://wa.me/56962253410?text=Hola%20CobreVivo,%20quiero%20aprovechar%20la%20promoción:%201%20pulsera%20por%20$9.990%20o%202%20por%20$12.990" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            Pedir mi Promo por WhatsApp
+        </a>
+    </section>
+
+    <!-- Productos Section -->
+    <section id="productos" class="productos">
+        <h2 class="section-title">Nuestras Pulseras</h2>
+        <div class="grid-productos">
+            
+            <!-- Producto 1 -->
+            <div class="producto-card">
+                <div class="producto-img-container">
+                    <!-- FOTO 1: Pulsera1.JPG -->
+                    <img src="Pulsera1.JPG" alt="Pulsera Trenza Ancestral de Cobre" class="producto-img">
+                </div>
+                <div class="producto-info">
+                    <h3>Trenza Ancestral</h3>
+                    <p>Hilo de cobre puro tejido a mano, inspirado en las ofrendas del desierto.</p>
+                    <div class="etiqueta-promo">Incluida en la Promo</div>
+                    <a href="https://wa.me/56962253410?text=Hola%20CobreVivo,%20quiero%20la%20pulsera%20Trenza%20Ancestral%20y%20aprovechar%20la%20promoción%20(1x$9.990%20/%202x$12.990)" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-card">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0A16 16 0 0 0 0 16c0 2.8.7 5.5 2 7.8L0 32l8.4-2.2A16 16 0 1 0 16 0zm0 29.3c-2.5 0-4.9-.7-7-2l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A13.3 13.3 0 1 1 16 29.3zm7.3-9.8c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.3-.4.3-.8.1-.4-.2-1.7-.6-3.2-2a12 12 0 0 1-2.2-2.7c-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.7s0-.5 0-.7c-.1-.2-.9-2.2-1.2-3-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.4 3.9 1.6 4.2c.2.3 2.8 4.3 6.8 6 4 1.7 4 1.1 4.7 1 .7-.1 2.4-1 2.7-2 .3-1 .3-1.8.2-2-.1-.1-.3-.2-.7-.4z"/></svg>
+                        Pedir por WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Producto 2 -->
+            <div class="producto-card">
+                <div class="producto-img-container">
+                    <!-- FOTO 2: Pulsera3.JPG -->
+                    <img src="Pulsera3.JPG" alt="Pulsera Martillado Vivo de Cobre" class="producto-img">
+                </div>
+                <div class="producto-info">
+                    <h3>Martillado Vivo</h3>
+                    <p>Textura forjada al calor. Un clásico unisex que resalta la pureza del metal.</p>
+                    <div class="etiqueta-promo">Incluida en la Promo</div>
+                    <a href="https://wa.me/56962253410?text=Hola%20CobreVivo,%20quiero%20la%20pulsera%20Martillado%20Vivo%20y%20aprovechar%20la%20promoción%20(1x$9.990%20/%202x$12.990)" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-card">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0A16 16 0 0 0 0 16c0 2.8.7 5.5 2 7.8L0 32l8.4-2.2A16 16 0 1 0 16 0zm0 29.3c-2.5 0-4.9-.7-7-2l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A13.3 13.3 0 1 1 16 29.3zm7.3-9.8c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.3-.4.3-.8.1-.4-.2-1.7-.6-3.2-2a12 12 0 0 1-2.2-2.7c-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.7s0-.5 0-.7c-.1-.2-.9-2.2-1.2-3-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.4 3.9 1.6 4.2c.2.3 2.8 4.3 6.8 6 4 1.7 4 1.1 4.7 1 .7-.1 2.4-1 2.7-2 .3-1 .3-1.8.2-2-.1-.1-.3-.2-.7-.4z"/></svg>
+                        Pedir por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="producto-card">
+                <div class="producto-img-container">
+                    <!-- FOTO 3: Pulsera.JPG -->
+                    <img src="Pulsera.JPG" alt="Pulsera Hilo de Luz de Cobre" class="producto-img">
+                </div>
+                <div class="producto-info">
+                    <h3>Hilo de Luz</h3>
+                    <p>Diseño minimalista con cierre ajustable. Conexión directa con tu bienestar.</p>
+                    <div class="etiqueta-promo">Incluida en la Promo</div>
+                    <a href="https://wa.me/56962253410?text=Hola%20CobreVivo,%20quiero%20la%20pulsera%20Hilo%20de%20Luz%20y%20aprovechar%20la%20promoción%20(1x$9.990%20/%202x$12.990)" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-card">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0A16 16 0 0 0 0 16c0 2.8.7 5.5 2 7.8L0 32l8.4-2.2A16 16 0 1 0 16 0zm0 29.3c-2.5 0-4.9-.7-7-2l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A13.3 13.3 0 1 1 16 29.3zm7.3-9.8c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.3-.4.3-.8.1-.4-.2-1.7-.6-3.2-2a12 12 0 0 1-2.2-2.7c-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.7s0-.5 0-.7c-.1-.2-.9-2.2-1.2-3-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.4 3.9 1.6 4.2c.2.3 2.8 4.3 6.8 6 4 1.7 4 1.1 4.7 1 .7-.1 2.4-1 2.7-2 .3-1 .3-1.8.2-2-.1-.1-.3-.2-.7-.4z"/></svg>
+                        Pedir por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuidados Section -->
+    <section id="cuidados" class="cuidados">
+        <h2 class="section-title" style="color: var(--cream);">El Cobre, un metal vivo</h2>
+        <div class="cuidados-grid">
+            <div class="cuidados-item">
+                <h3>La magia del cambio</h3>
+                <p>El cobre es un metal vivo: con el oxígeno, la humedad y el sol, su superficie cambia de tono con el tiempo. No es desgaste, es su forma de acompañarte y adaptarse a ti.</p>
+            </div>
+            <div class="cuidados-item">
+                <h3>Cuidado de tu pulsera</h3>
+                <p>Si quieres devolverle el brillo, límpialo con limón y sal, o déjalo tal como está. A veces el cobre deja un tono verdoso en la piel: es completamente normal y se lava con agua.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <span class="logo-text">
+            <span class="cobre">COBRE</span><span class="vivo" style="color: var(--teal-light);">VIVO</span>
+        </span>
+        <p>Cobre Chileno · Saber ancestral y bienestar compartido</p>
+        
+        <a href="https://wa.me/56962253410?text=Hola%20CobreVivo,%20tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" class="footer-whatsapp">
+            <svg width="20" height="20" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M16 0A16 16 0 0 0 0 16c0 2.8.7 5.5 2 7.8L0 32l8.4-2.2A16 16 0 1 0 16 0zm0 29.3c-2.5 0-4.9-.7-7-2l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A13.3 13.3 0 1 1 16 29.3zm7.3-9.8c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.3-.4.3-.8.1-.4-.2-1.7-.6-3.2-2a12 12 0 0 1-2.2-2.7c-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.7s0-.5 0-.7c-.1-.2-.9-2.2-1.2-3-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.4 3.9 1.6 4.2c.2.3 2.8 4.3 6.8 6 4 1.7 4 1.1 4.7 1 .7-.1 2.4-1 2.7-2 .3-1 .3-1.8.2-2-.1-.1-.3-.2-.7-.4z"/></svg>
+            +56 9 6225 3410
+        </a>
+
+        <p style="margin-top: 20px; font-size: 0.8rem;">&copy; 2024 CobreVivo. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/56962253410?text=Hola%20CobreVivo,%20estoy%20navegando%20en%20su%20web%20y%20quiero%20aprovechar%20la%20promoción" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0A16 16 0 0 0 0 16c0 2.8.7 5.5 2 7.8L0 32l8.4-2.2A16 16 0 1 0 16 0zm0 29.3c-2.5 0-4.9-.7-7-2l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A13.3 13.3 0 1 1 16 29.3zm7.3-9.8c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.3-.4.3-.8.1-.4-.2-1.7-.6-3.2-2a12 12 0 0 1-2.2-2.7c-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.7s0-.5 0-.7c-.1-.2-.9-2.2-1.2-3-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.4 3.9 1.6 4.2c.2.3 2.8 4.3 6.8 6 4 1.7 4 1.1 4.7 1 .7-.1 2.4-1 2.7-2 .3-1 .3-1.8.2-2-.1-.1-.3-.2-.7-.4z"/></svg>
+    </a>
+
+</body>
+</html>
